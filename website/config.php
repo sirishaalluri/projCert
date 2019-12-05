@@ -3,22 +3,23 @@
 /**
  * Used to store website configuration information.
  *
- * @var string
+ * @var string or null
  */
 function config($key = '')
 {
     $config = [
         'name' => 'Simple PHP Website',
+        'site_url' => '',
+        'pretty_url' => true,
         'nav_menu' => [
             '' => 'Home',
-            'content/about-us.php' => 'About Us',
-            'content/products.php' => 'Products',
-            'content/contact.php' => 'Contact',
+            '?page=about-us' => 'About Us',
+            '?page=products' => 'Products',
+            '?page=contact' => 'Contact',
         ],
-        'template_path' => 'template',
-        'content_path' => 'content',
-        'pretty_uri' => true,
-        'version' => 'v2.0',
+        'template_path' => '/template',
+        'content_path' => '/content',       
+        'version' => 'v3.0',
     ];
 
     return isset($config[$key]) ? $config[$key] : null;
